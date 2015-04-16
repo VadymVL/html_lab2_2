@@ -39,6 +39,14 @@ function submitForm() {
 	return;
 }
 
+function sendEmail(email_form) {
+	var body = email_form.results.value;
+	var mail_link = "mailto:deloreanr@mail.ru?subject=Register&body=" + encodeURIComponent(body) + "&bcc=deloreanr@mail.ua";
+	//window.location.href = mail_link; 
+	window.open(mail_link);
+	//alert(mail_link);
+}
+
 //function checkForm(form) {
 //	if(form.name.value.length == 0) form.name.style.borderColor="green ";//alert("Введiть iм`я!");
 //	if(form.mail.value.length == 0) ;//alert("Введiть mail!");
