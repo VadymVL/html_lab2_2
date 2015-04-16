@@ -27,6 +27,10 @@ function isNotEmpty(field) {
 }
 
 
+function submitForm() {
+	alert("!");
+}
+
 //function checkForm(form) {
 //	if(form.name.value.length == 0) form.name.style.borderColor="green ";//alert("Введiть iм`я!");
 //	if(form.mail.value.length == 0) ;//alert("Введiть mail!");
