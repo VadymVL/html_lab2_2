@@ -28,7 +28,15 @@ function isNotEmpty(field) {
 
 
 function submitForm() {
-	alert("!");
+	var input_form = document.input_form;
+	var result = input_form.first_name.value + ", " + 
+	input_form.last_name.value + ", " + 
+	input_form.email_adress.value + ", " + 
+	input_form.gender.value + ", " + 
+	input_form.age.value
+	document.validation_form.results.value = result;
+	//alert(result);
+	return;
 }
 
 //function checkForm(form) {

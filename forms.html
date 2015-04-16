@@ -2,6 +2,8 @@
 
 <html>
 
+<script src="checkForm.js"></script>
+
 <head>
 	<title>
 		FORMS!
@@ -16,14 +18,14 @@
 		<center>
 			<fieldset>
 			<legend>Register:</legend>
-				<form id="input_form" onSubmit="submitForm()">
+				<form name="input_form" id="input_form">
 				<div class="alignLeft">
 					<br>First name:<br>
 					<input type="text" name="first_name"></input>
 					<br>Last name:<br>
 					<input type="text" name="last_name"></input>
 					<br>Email:<br>
-					<input type="text" name="email"></input>
+					<input type="text" name="email_adress"></input>
 					<br>Gender:<br>
 					<input type="text" name="gender"></input>
 					<br>Age:<br>
@@ -32,17 +34,18 @@
 					<p>
 					<input type="reset"></input>
 					<p>
-					<input type="submit"></input>
+					<button type="button" onClick="submitForm()" form="input_form">submit</button>
 				</form>
+				<p>
 			</fieldset>
 			<br>
 			
 			<fieldset>
 			<legend>Validate:</legend>
-				<form id="validation_form">
-					<input type="text" style="height:25pt; "></input>
+				<form name="validation_form" action="" enctype="text/plain">
+					<textarea name="results" cols="18" rows="3"></textarea>
 					<p>
-					<textarea name="Text1" cols="18" rows="3"></textarea>
+					<input type="submit" name="mail"></input>
 				</form>
 			</fieldset>
 		</center>

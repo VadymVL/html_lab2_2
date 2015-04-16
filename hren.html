@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Customer Survey Form</title>
+    <script>
+    function processform () {
+    var newline = "\n"; 
+    var result_str = "";
+    var Form1 = document.form1;
+    result_str += Form1.first_name.value + " " + Form1.last_name.value + newline;
+    result_str += Form1.email.value + newline;
+
+    for (x = 0; x < Form1.where.length; x++) {
+     if (Form1.where[x].checked) {
+     result_str += Form1.where[x].value + newline;
+     break;
+     }
+    }
+    if (Form1.desktop.checked) result_str += "desktop computers" + newline;
+    if (Form1.notebook.checked) result_str += "notebook computers" + newline;
+    if (Form1.peripherals.checked) result_str += "peripherals" + newline; 
+    if (Form1.software.checked) result_str += "software" + newline;  
+    document.form2.results.value = result_str;
+	//alert(" ");
+    return;
+    }  
+    </script>
+</head>
+
+<body>
+    <h1>Web Site Survey</h1>
+
+    <form name="form1" id="form1">
+        <table cellpadding="5">
+            <tr>
+                <td>First name:</td>
+
+                <td><input type="text" name="first_name" size="40" maxlength="40" /></td>
+            </tr>
+
+            <tr>
+                <td>Last name:</td>
+
+                <td><input type="text" name="last_name" size="40" maxlength="40" /></td>
+            </tr>
+
+            <tr>
+                <td>E-mail address:</td>
+
+                <td><input type="text" name="email" size="40" maxlength="40" /></td>
+            </tr>
+        </table>
+
+        <p><b>Where you heard about us:</b></p><input type="radio" name="where" value="Web" checked="checked" />Web Search or
+        Link<br />
+        <input type="radio" name="where" value="Advertisement" />Radio or TV Ad<br />
+        <input type="radio" name="where" value="Press Mention" />Article or press mention<br />
+        <input type="radio" name="where" value="Other" />Other<br />
+
+        <p><b>What products would you like more information about? (check all that apply)</b><br />
+        <input type="checkbox" name="desktop" /> desktop computers <input type="checkbox" name="notebook" /> notebook computers
+        <input type="checkbox" name="peripherals" /> peripherals <input type="checkbox" name="software" />
+        software</p>
+		<button name="submit" type="button" onclick="processform ()"><span style=
+        " font-family: Arial, Helvetica; font-variant: small-caps; font-size: 12pt">Submit Survey</span></button> 
+		 <!--input type="submit" name="submit"  onclick="processform()"></input-->
+		<button name=
+        "reset" type="reset"><span style=" font-family: Arial, Helvetica; font-variant: small-caps; font-size: 12pt">Clear
+        Page</span></button>
+    </form>
+    <hr />
+
+    <form name="form2" id="form2" action="mailto:survey@fakecorp.net">
+        <p>Check the entries below for accuracy. If they&#39;re accurate, then enter a comment on the last line (if desired) and
+        click Send It to send the form via e-mail.</p>
+        <textarea name="results" cols="40" rows="10">
+</textarea> <button name="submit" type="submit"><span style=
+" font-family: Arial, Helvetica; font-variant: small-caps; font-size: 12pt">Send It!</span></button>
+    </form>
+</body>
+</html>
