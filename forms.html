@@ -31,8 +31,8 @@
 						<td>Gender:<br><input type="text" name="gender"></input></td>
 					</tr>
 					<tr>
-						<td>Email:<br><input type="text" name="email_adress"></input></td>
-						<td>Gender:<br><input type="text" name="gender"></input></td>
+						<td>Country:<br><input type="text" name="email_adress"></input></td>
+						<td>City:<br><input type="text" name="gender"></input></td>
 					</tr>
 					<tr>
 						<td>Age:<br><input type="text" name="age"></input></td>
@@ -76,10 +76,10 @@
 			
 			<fieldset>
 			<legend>Validate:</legend>
-				<form name="validation_form" onSubmit="sendEmail(this)" enctype="text/plain">
+				<form name="validation_form" enctype="text/plain">
 					<textarea name="results" cols="45" rows="5"></textarea>
 					<p>
-					<input type="submit" name="mail"></input>
+					<button type="button" onclick="sendEmail()" name="mail">send</input>
 				</form>
 			</fieldset>
 			<p><p>

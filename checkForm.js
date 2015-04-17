@@ -39,11 +39,13 @@ function submitForm() {
 	return;
 }
 
-function sendEmail(email_form) {
-	var body = email_form.results.value;
-	var mail_link = "mailto:deloreanr@mail.ru?subject=Register&body=" + encodeURIComponent(body) + "&bcc=deloreanr@mail.ua";
+function sendEmail() {
+	var body = document.validation_form.results.value;//email_form.results.value;
+	var mail_link = 'mailto:deloreanr@mail.ru?subject=Register&body=' + encodeURIComponent(body) + "&bcc=deloreanr@mail.ua";
 	//window.location.href = mail_link; 
-	window.open(mail_link);
+	//window.open(mail_link);
+	window.location.href = mail_link;
+	console.log(mail_link);
 	//alert(mail_link);
 }
 
