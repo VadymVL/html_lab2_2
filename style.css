@@ -22,6 +22,10 @@ fieldset {
 	margin:5px;
 }
 
+button, textarea, input {
+	border-radius:5px;
+}
+
 .alignLeft {
 	text-align:left;
 }

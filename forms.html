@@ -28,7 +28,7 @@
 					</tr>
 					<tr>
 						<td>Email:<br><input type="text" name="email_adress"></input></td>
-						<td>Gender:<br><input type="text" name="gender"></input></td>
+						<td>Password:<br><input type="password" name="password"></input></td>
 					</tr>
 					<tr>
 						<td>Country:<br><input type="text" name="email_adress"></input></td>
@@ -36,11 +36,11 @@
 					</tr>
 					<tr>
 						<td>Age:<br><input type="text" name="age"></input></td>
-						<td>Gender:<br><input type="radio" name="gender">M</input>
-								<input type="radio" name="gender">F</input></td>
+						<td>Gender:<br><input type="radio" id="male" name="gender"><label for="male">Male</label></input>
+								<input type="radio" id="female" name="gender"><label for="female">Female</label></input></td>
 					</tr>
 					<tr>
-						<td>where:<input type="radio" name="where"></input>
+						<td>where:<br><input type="radio" name="where"><label></label></input>
 						where:<input type="radio" name="where"></input>
 						<br>
 						where:<input type="radio" name="where"></input>
@@ -52,22 +52,25 @@
 						where:<input type="checkbox" name="where"></input>
 						where:<input type="checkbox" name="where"></input>
 						<br>
-						where:<input type="checkbox" name="where"></input></td>
+						where:<input type="checkbox" name="where" ></input></td>
 					</tr>
 					<tr>
-						<td><textarea name="about"></textarea></td>
-						<td><textarea name="about"></textarea></td>
+						<td><hr>Interests:<br><textarea name="about"></textarea></td>
+						<td><hr>Short Bio:<br><textarea name="about"></textarea></td>
 					</tr>
 					<tr>
-						<td><textarea name="about"></textarea></td>
-						<td><textarea name="about"></textarea></td>
+						<td>About:<br><textarea name="about"></textarea></td>
+						<td>Comment:<br><textarea name="about"></textarea></td>
+					</tr>
+					<tr>
+						<td>Comment:</td>
 					</tr>
 				</table>
-				<center>
-				<textarea name="about" style="width:96%; margin:5px;"></textarea>
+				<center>	
+				<textarea name="comment" id="comment" style="width:96%; margin-left:5px; margin-right:5px; border-radius: 10px;"></textarea>
 					<p>
 					<input type="reset"></input>
-					<button type="button" onClick="submitForm()" form="input_form">submit</button>
+					<button type="button" onClick="setbackground()" form="input_form">submit</button>
 				</form>
 				<p>
 				</center>
