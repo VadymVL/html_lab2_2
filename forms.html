@@ -35,24 +35,26 @@
 						<td>City:<br><input type="text" name="gender"></input></td>
 					</tr>
 					<tr>
-						<td>Age:<br><input type="text" name="age"></input></td>
+						<td>Postal code:<br><input type="text" name="zip_code"></input></td>
 						<td>Gender:<br><input type="radio" id="male" name="gender"><label for="male">Male</label></input>
 								<input type="radio" id="female" name="gender"><label for="female">Female</label></input></td>
 					</tr>
 					<tr>
-						<td>where:<br><input type="radio" name="where"><label></label></input>
-						where:<input type="radio" name="where"></input>
-						<br>
-						where:<input type="radio" name="where"></input>
-						where:<input type="radio" name="where"></input></td>
+						<td>Age:<br><input type="radio" id="20" name="age"><label for="20">1-20</label></input>
+											<input type="radio" id="40" name="age"><label for="40">20-40</label></input>
+									<br><input type="radio" id="60" name="age"><label for="60">40-60</label></input>
+											<input type="radio" id="80" name="age"><label for="80">60-80</label></input>
+									<br><input type="radio" id="100" name="age"><label for="100">80-100</label></input>
+											</td>
 						
-						<td>where:<input type="checkbox" name="where"></input>
-						where:<input type="checkbox" name="where"></input>
+						<td>Language:<br>
+						<input type="checkbox" name="lang"></input>English
+						<input type="checkbox" name="lang"></input>German
+						<input type="checkbox" name="lang"></input>Spanish
 						<br>
-						where:<input type="checkbox" name="where"></input>
-						where:<input type="checkbox" name="where"></input>
-						<br>
-						where:<input type="checkbox" name="where" ></input></td>
+						<input type="checkbox" name="lang"></input>Italian
+						<input type="checkbox" name="lang"></input>Ukrainian
+						<input type="checkbox" name="lang" ></input>Other</td>
 					</tr>
 					<tr>
 						<td><hr>Interests:<br><textarea name="about"></textarea></td>
@@ -70,7 +72,7 @@
 				<textarea name="comment" id="comment" style="width:96%; margin-left:5px; margin-right:5px; border-radius: 10px;"></textarea>
 					<p>
 					<input type="reset"></input>
-					<button type="button" onClick="setbackground()" form="input_form">submit</button>
+					<button type="button" onClick="changeColor()" form="input_form">submit</button>
 				</form>
 				<p>
 				</center>
