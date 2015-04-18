@@ -1,8 +1,40 @@
 function isNotEmpty(field) {
 
     var fieldData = field.value;
-
-    if (fieldData.length == 0 || fieldData == "" || fieldData == fieldData) {
+	var tag = field.tagName.toLowerCase();
+	var attr = field.attributes;
+	
+	if (field.hasAttributes()) {
+       var attrs = field.attributes;
+       var output = "";
+       for(var i = attrs.length - 1; i >= 0; i--) {
+         output += attrs[i].name + "->" + attrs[i].value + ", ";
+       }
+       attr = output;
+     } else {
+       attr = "No attributes to show";
+     }
+	 
+	console.log(tag + "." + attr);
+	if(tag == "checkbox") {
+		if(field.checked) return true;
+		else return false;
+	}
+	
+	if(tag == "radio") {
+		if(field.checked) return true;
+		else return false;
+	}
+	
+	if(attr.indexOf("reset") > -1) {
+		return true;
+	}
+	
+	if(tag == "button") {
+		return true;
+	}
+		
+    if (fieldData.length == 0 || fieldData == "") {
 
         field.className = "FieldError"; //Classs to highlight 
         //alert("Please correct the errors in order to continue.");
@@ -14,6 +46,17 @@ function isNotEmpty(field) {
     }
 }
 
+function rawSubmit() {
+	var form = document.input_form;
+	var result = "";
+	for(var i=0; i < form.length; i++) {
+		if(isNotEmpty(form[i])) {
+			if(i==0) result += form[i].value;
+			result += ", " + form[i].value;
+		}
+	}
+	document.validation_form.results.value = result;
+}
 
 function submitForm() {
 	var input_form = document.input_form;
