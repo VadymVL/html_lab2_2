@@ -26,6 +26,10 @@ button, textarea, input {
 	border-radius:5px;
 }
 
+fieldset:focus , textarea:focus , input:focus  {
+	border:1px solid black;
+}
+
 .alignLeft {
 	text-align:left;
 }

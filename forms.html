@@ -17,7 +17,7 @@
 	<div class="child">
 		<center>
 			<fieldset>
-			<legend>Register:</legend>
+			<legend style="color:silver;">Register:</legend>
 				<form name="input_form" id="input_form">
 				<div class="alignLeft">
 				
@@ -31,38 +31,39 @@
 						<td>Password:<br><input type="password" name="password"></input></td>
 					</tr>
 					<tr>
-						<td>Country:<br><input type="text" name="email_adress"></input></td>
-						<td>City:<br><input type="text" name="gender"></input></td>
+						<td>Country:<br><input type="text" name="country"></input></td>
+						<td>City:<br><input type="text" name="city"></input></td>
 					</tr>
 					<tr>
-						<td>Postal code:<br><input type="text" name="zip_code"></input></td>
-						<td>Gender:<br><input type="radio" id="male" name="gender"><label for="male">Male</label></input>
-								<input type="radio" id="female" name="gender"><label for="female">Female</label></input></td>
+						<td>Postal code:<br><input type="text" name="postal_code"></input></td>
+						<td>Gender:<br><input type="radio" id="male" name="gender" value="M"><label for="male">Male</label></input>
+								<input type="radio" id="female" name="gender" value="F"><label for="female">Female</label></input></td>
 					</tr>
 					<tr>
-						<td>Age:<br><input type="radio" id="20" name="age"><label for="20">1-20</label></input>
-											<input type="radio" id="40" name="age"><label for="40">20-40</label></input>
-									<br><input type="radio" id="60" name="age"><label for="60">40-60</label></input>
-											<input type="radio" id="80" name="age"><label for="80">60-80</label></input>
-									<br><input type="radio" id="100" name="age"><label for="100">80-100</label></input>
+						<td>Age:<br><input type="radio" id="20" name="age" value="20"><label for="20">1-20</label></input>
+											<input type="radio" id="40" name="age" value="40"><label for="40">21-40</label></input>
+									<br><input type="radio" id="60" name="age" value="60"><label for="60">41-60</label></input>
+											<input type="radio" id="80" name="age" value="80"><label for="80">61-80</label></input>
+									<br><input type="radio" id="100" name="age" value="100"><label for="100">81-100</label></input>
 											</td>
 						
 						<td>Language:<br>
-						<input type="checkbox" name="lang"></input>English
-						<input type="checkbox" name="lang"></input>German
-						<input type="checkbox" name="lang"></input>Spanish
+						<input type="checkbox" name="lang" value="eng"></input>English
+						<input type="checkbox" name="lang" value="ukr"></input>Ukrainian
 						<br>
-						<input type="checkbox" name="lang"></input>Italian
-						<input type="checkbox" name="lang"></input>Ukrainian
-						<input type="checkbox" name="lang" ></input>Other</td>
+						<input type="checkbox" name="lang" value="spa"></input>Spanish
+						<input type="checkbox" name="lang" value="ita"></input>Italian
+						<br>
+						<input type="checkbox" name="lang" value="ger"></input>German
+						<input type="checkbox" name="lang" value="oth"></input>Other</td>
 					</tr>
 					<tr>
-						<td><hr>Interests:<br><textarea name="about"></textarea></td>
-						<td><hr>Short Bio:<br><textarea name="about"></textarea></td>
+						<td><hr>Interests:<br><textarea name="interests"></textarea></td>
+						<td><hr>Short Bio:<br><textarea name="bio"></textarea></td>
 					</tr>
 					<tr>
 						<td>About:<br><textarea name="about"></textarea></td>
-						<td>Comment:<br><textarea name="about"></textarea></td>
+						<td>Skills:<br><textarea name="skills"></textarea></td>
 					</tr>
 					<tr>
 						<td>Comment:</td>
@@ -72,7 +73,7 @@
 				<textarea name="comment" id="comment" style="width:96%; margin-left:5px; margin-right:5px; border-radius: 10px;"></textarea>
 					<p>
 					<input type="reset"></input>
-					<button type="button" onClick="changeColor()" form="input_form">submit</button>
+					<button type="button" onClick="submitForm()" form="input_form">submit</button>
 				</form>
 				<p>
 				</center>
@@ -80,7 +81,7 @@
 			<br>
 			
 			<fieldset>
-			<legend>Validate:</legend>
+			<legend style="color:silver;">Validate:</legend>
 				<form name="validation_form" enctype="text/plain">
 					<textarea name="results" cols="45" rows="5"></textarea>
 					<p>
