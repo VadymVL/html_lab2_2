@@ -6,7 +6,7 @@ body {
 .parent {
    position: absolute;
    top: 50%;
-   margin-top: -200px;/* half of #content height*/
+   margin-top: -20%;/* half of #content height*/
    left: 0;
    width: 100%;
 }
@@ -26,16 +26,23 @@ button, textarea, input {
 	border-radius:5px;
 }
 
-fieldset:focus , textarea:focus , input:focus  {
+textarea:focus, input:focus  {
 	border:1px solid black;
+}
+
+span {
+	font-weight:bold; 
+	color:red;
+	float:right;
+	padding-right:20%;
 }
 
 .alignLeft {
 	text-align:left;
 }
 
-.error {
-  border:2px solid red;
+.clear {
+  border:2px solid none;
 }
 
 .FieldOk {

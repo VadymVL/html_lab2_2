@@ -16,6 +16,8 @@
 <div class="parent">
 	<div class="child">
 		<center>
+			<div id="alert_message" style="color:red; font-weight:bold;">
+			</div>
 			<fieldset>
 			<legend style="color:silver;">Register:</legend>
 				<form name="input_form" id="input_form">
@@ -23,39 +25,51 @@
 				
 				<table>
 					<tr>
-						<td>First name:<br><input type="text" name="first_name"></input></td>
-						<td>Last name:<br><input type="text" name="last_name"></input></td>
+						<td>First name<span>*</span>:<br><input type="text" name="first_name"></input></td>
+						<td>Last name<span>*</span>:<br><input type="text" name="last_name"></input></td>
 					</tr>
 					<tr>
-						<td>Email:<br><input type="text" name="email_adress"></input></td>
-						<td>Password:<br><input type="password" name="password"></input></td>
+						<td>Email<span>*</span>:<br><input type="text" name="email_adress"></input></td>
+						<td>Password<span>*</span>:<br><input type="password" name="password"></input></td>
 					</tr>
 					<tr>
-						<td>Country:<br><input type="text" name="country"></input></td>
-						<td>City:<br><input type="text" name="city"></input></td>
+						<td>Country<span>*</span>:<br><input type="text" name="country"></input></td>
+						<td>City<span>*</span>:<br><input type="text" name="city"></input></td>
 					</tr>
 					<tr>
-						<td>Postal code:<br><input type="text" name="postal_code"></input></td>
-						<td>Gender:<br><input type="radio" id="male" name="gender" value="M"><label for="male">Male</label></input>
-								<input type="radio" id="female" name="gender" value="F"><label for="female">Female</label></input></td>
+						<td>Postal code<span>*</span>:<br><input type="text" name="postal_code"></input></td>
+						<td>Gender<span>*</span>:<br>
+						<div id="genders">
+						<input type="radio" id="male" name="gender" value="M"><label for="male">Male</label></input>
+						<input type="radio" id="female" name="gender" value="F"><label for="female">Female</label></input>
+						</div>
+						</td>
 					</tr>
 					<tr>
-						<td>Age:<br><input type="radio" id="20" name="age" value="20"><label for="20">1-20</label></input>
-											<input type="radio" id="40" name="age" value="40"><label for="40">21-40</label></input>
-									<br><input type="radio" id="60" name="age" value="60"><label for="60">41-60</label></input>
-											<input type="radio" id="80" name="age" value="80"><label for="80">61-80</label></input>
-									<br><input type="radio" id="100" name="age" value="100"><label for="100">81-100</label></input>
-											</td>
+						<td>Age<span>*</span>:<br>
+						<div id="ages">
+						<input type="radio" id="a20" name="age" value="20"><label for="a20">1-20</label></input>
+						<input type="radio" id="a40" name="age" value="40"><label for="a40">21-40</label></input>
+						<br>
+						<input type="radio" id="a60" name="age" value="60"><label for="a60">41-60</label></input>
+						<input type="radio" id="a80" name="age" value="80"><label for="a80">61-80</label></input>
+						<br>
+						<input type="radio" id="a100" name="age" value="100"><label for="a100">81-100</label></input>
+						</div>
+						</td>
 						
-						<td>Language:<br>
-						<input type="checkbox" name="lang" value="eng"></input>English
-						<input type="checkbox" name="lang" value="ukr"></input>Ukrainian
+						<td>Language<span>*</span>:<br>
+						<div id="langs">
+						<input type="checkbox"  id="eng" name="lang" value="eng"><label for="eng">English</label></input>
+						<input type="checkbox"  id="ukr" name="lang" value="ukr"><label for="ukr">Ukrainian</label></input>
 						<br>
-						<input type="checkbox" name="lang" value="spa"></input>Spanish
-						<input type="checkbox" name="lang" value="ita"></input>Italian
+						<input type="checkbox"  id="spa" name="lang" value="spa"><label for="spa">Spanish</label></input>
+						<input type="checkbox"  id="ita" name="lang" value="ita"><label for="ita">Italian</label></input>
 						<br>
-						<input type="checkbox" name="lang" value="ger"></input>German
-						<input type="checkbox" name="lang" value="oth"></input>Other</td>
+						<input type="checkbox"  id="ger" name="lang" value="ger"><label for="ger">German</label></input>
+						<input type="checkbox"  id="oth" name="lang" value="oth"><label for="oth">Other</label></input>
+						</div>
+						</td>
 					</tr>
 					<tr>
 						<td><hr>Interests:<br><textarea name="interests"></textarea></td>
@@ -72,8 +86,8 @@
 				<center>	
 				<textarea name="comment" id="comment" style="width:96%; margin-left:5px; margin-right:5px; border-radius: 10px;"></textarea>
 					<p>
-					<input type="reset"></input>
-					<button type="button" onClick="rawSubmit()" form="input_form">submit</button>
+					<button type="reset" onClick="clearSubmit()" form="input_form">Reset</button>
+					<button type="button" onClick="rawSubmit()" form="input_form">Submit</button>
 				</form>
 				<p>
 				</center>
