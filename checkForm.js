@@ -6,6 +6,7 @@ var gender_radio_count = 2;
 var age_radio_checked = false;
 var age_radio_count = 5;
 var text_input_count = 7;
+var raised_error = false;
 
 function isNotEmpty(field) {
 
@@ -90,6 +91,7 @@ function isNotEmpty(field) {
 			if(fieldData.length !=5 || checkForNoNumbers(fieldData)) {
 				field.className = "FieldError";
 				document.getElementById("alert_message").innerHTML += "<br>Postal code should contain only numbers and have 5 digits!"
+				raised_error = true;
 				return false;
 			} else {
 				field.className = "FieldOk";
@@ -99,6 +101,7 @@ function isNotEmpty(field) {
 			if(fieldData.indexOf("@") == -1) {
 				field.className = "FieldError";
 				document.getElementById("alert_message").innerHTML += "<br>Email adress should be correct and contain '@'!"
+				raised_error = true;
 				return false;
 			} else {
 				field.className = "FieldOk";
@@ -108,6 +111,7 @@ function isNotEmpty(field) {
 			if(fieldData.length < 6) {
 				field.className = "FieldError";
 				document.getElementById("alert_message").innerHTML += "<br>Password should have 6 characters length!"
+				raised_error = true;
 				return false;
 			} else {
 				field.className = "FieldOk";
@@ -124,6 +128,7 @@ function isNotEmpty(field) {
 					case "city":element_name="City name field";break;
 				}
 				document.getElementById("alert_message").innerHTML += "<br>" + element_name + " should contain only letters!"
+				raised_error = true;
 				return false;
 			} else {
 				field.className = "FieldOk";
@@ -144,17 +149,18 @@ function rawSubmit() {
 	gender_radio_count = 2;
 	text_input_count = 7;
 	empty_fields = false;
+	raised_error = false;
 	for(var i=0; i < form.length; i++) {
 		//if(!isNotEmpty(form[i])) return;
 		if(isNotEmpty(form[i])) {
 			if(form[i].value.length > 0) { //for not required fields
 				if(i>0) result += ", ";
-				result += + form[i].value;
+				result += form[i].value;
 			}
 		}
 	}
 	
-	if(empty_fields) {
+	if(empty_fields || raised_error) {
 		document.validation_form.results.value = "";
 		return;
 	}
